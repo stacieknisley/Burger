@@ -22,7 +22,9 @@ ul {
 }
 
 img {
-	align-content: center;
+  align-content: center;
+  height: 30%;
+  width: 30%;
 }
 
 h1 {

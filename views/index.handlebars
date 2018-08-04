@@ -22,11 +22,11 @@ that will submit the user input into the database. --}}
                 {{#each burgers}} {{#unless devoured}}
                 <li>
                     {{id}} {{burger_name}} {{!--
-                    <form action="/{{this.id}}?_method=PUT" method="POST"> --}} {{!--
-                        <input type="hidden" name="devoured" value="true"> --}}
+                    <form action="/api/burgers/post" method="POST"> --}}
+                        <input type="hidden" name="devoured" value="true">
                         <button class="btn-primary devour-btn" data-id={{id}} data-status={{devoured}}>Devour It!</button>
-                    </form>
 
+                        {{!-- method=PUT" --}}
                 </li>
                 {{/unless}} {{/each}}
             </ul>
@@ -41,8 +41,7 @@ that will submit the user input into the database. --}}
             <li>
                 {{id}} {{burger_name}}
 
-            </li>
-            {{/if}} {{/each}}
+            </li> {{/if}} {{/each}}
 
         </div>
 
@@ -54,7 +53,8 @@ that will submit the user input into the database. --}}
 
             <h2>Add A Burger!</h2>
 
-            <form class="create-update-form" action="/" method="POST">
+            <form class="create-update-form">
+
 
                 <div class="form-group">
                     <p>Enter the burger you want to order and click the Submit Order button.</p>

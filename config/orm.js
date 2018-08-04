@@ -48,13 +48,13 @@ function objToSql(ob) {
 }
 
 var orm = {
-    selectAll: function (tableInput, burger) {
+    selectAll: function (tableInput, cb) {
         var queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
             }
-            burger(result);
+            cb(result);
         });
     },
 
@@ -72,7 +72,7 @@ var orm = {
             if (err) {
                 throw err;
             }
-            burger(result);
+            cb(result);
         });
     },
     // ////////////////////
@@ -91,7 +91,7 @@ var orm = {
                 throw err;
             }
 
-            burger(result);
+            cb(result);
         });
     }
 };
